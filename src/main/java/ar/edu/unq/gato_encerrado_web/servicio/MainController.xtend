@@ -26,13 +26,15 @@ class MainController {
 		)
 	}
 	
+	// sino quiero tener todo en rojo poner el OK al final y despues codear
 	@Get("/laberintos")
-	def getLaberintos(String id){
-		
+	def todosLosLaberintos(String id){
+		ok
 	}
 	
+	
 	def static void main(String[] args) {
-		XTRest.start(MainController,9000)
+		XTRest.start(MainController,8900)
 	}
 	
 }
