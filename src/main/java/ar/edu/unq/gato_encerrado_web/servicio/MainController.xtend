@@ -29,6 +29,7 @@ class MainController {
 	// sino quiero tener todo en rojo poner el OK al final y despues codear
 	@Get("/laberintos")
 	def todosLosLaberintos(String id){
+		
 		ok
 	}
 	
