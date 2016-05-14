@@ -8,12 +8,20 @@ class GatoEncerrado {
 	
 	List<Usuario> usuarios
 	List<Laberinto> laberintos
+	Laberinto lab1
 	
 	new(){
-		val jardinEmbrujado = new Laberinto("jardin Embrujado", 01, "pathImage")
+		
+		laberintos = # [
+			lab1 = new Laberinto("jardin Embrujado", 01, "pathImage")
+		]
+		usuarios = # [
+			new Usuario(001, "gaston") // cargarle los laberintos
+		]
 	}
 	
 	static val INSTANCE = new GatoEncerrado
+	
 	
 	def static getInstance() {
 		INSTANCE

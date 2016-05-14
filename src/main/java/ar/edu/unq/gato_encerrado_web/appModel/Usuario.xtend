@@ -11,6 +11,13 @@ class Usuario {
 	List<Laberinto> resueltos
 	List<Laberinto> noResueltos
 	
+	new(int id, String name) {
+		idUsuario = id
+		nombreUsuario = name
+		resueltos = null
+		noResueltos = null 
+	}
+	
 	def getTodos() {
 		val todos = resueltos.addAll(noResueltos)
 		todos
