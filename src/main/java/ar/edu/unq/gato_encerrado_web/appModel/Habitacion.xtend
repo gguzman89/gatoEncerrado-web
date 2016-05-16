@@ -9,8 +9,8 @@ import org.eclipse.xtend.lib.annotations.Accessors
 @Accessors
 class Habitacion extends Applet{
 	
-	int id
-	String nombreHab
+	int idHabitacion
+	String nombreHabitacion
 	List<Accion> acciones
 	String pathImage	// 3 opciones para image
 	File file
@@ -19,6 +19,13 @@ class Habitacion extends Applet{
 	
 	def loadImage(){
 		seo = getImage(codeBase, "image.png")
+	}
+	
+	new(int id, String name){ // prox pathImage
+		idHabitacion = id
+		nombreHabitacion = name
+		acciones = null
+		
 	}
 	
 }

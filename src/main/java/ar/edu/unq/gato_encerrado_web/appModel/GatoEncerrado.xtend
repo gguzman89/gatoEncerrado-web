@@ -37,4 +37,8 @@ class GatoEncerrado {
 		usuario.getTodos()
 	}
 	
+	def datosLaberinto(List<Laberinto> laberintos, String idLaberinto) {
+		// findFirst
+	}
+	
 }

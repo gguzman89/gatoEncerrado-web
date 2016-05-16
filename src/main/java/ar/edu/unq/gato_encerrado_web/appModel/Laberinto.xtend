@@ -9,12 +9,13 @@ class Laberinto {
 	String nombre
 	int idLaberinto
 	String pathImage
-	//List<Habitacion> habitaciones
+	List<Habitacion> habitaciones
 	
 	new(String name, int id, String image) {
 		nombre = name
 		idLaberinto = id
 		pathImage = image
+		habitaciones = null
 	}
 	
 }

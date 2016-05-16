@@ -1,34 +1,16 @@
 package ar.edu.unq.gato_encerrado_web.servicio
 
-import org.uqbar.xtrest.api.annotation.Controller
-import org.uqbar.xtrest.json.JSONUtils
-import org.uqbar.xtrest.api.XTRest
-import org.uqbar.xtrest.api.annotation.Get
-import ar.edu.unq.gato_encerrado_web.appModel.Usuario
 import ar.edu.unq.gato_encerrado_web.appModel.GatoEncerrado
-
-class Saludador{
-	
-	def saludar(){
-		"hola mundo"
-	}
-}
+import org.uqbar.xtrest.api.XTRest
+import org.uqbar.xtrest.api.annotation.Controller
+import org.uqbar.xtrest.api.annotation.Get
+import org.uqbar.xtrest.json.JSONUtils
 
 @Controller
 class MainController {
 	
 	extension JSONUtils = new JSONUtils
 	
-	@Get("/hola")
-	def hello() {
-		// EESTO NO SE HACEEEEE
-		response.contentType = "text/html"
-		ok(
-			"<h2>" + new Saludador().saludar + "</h2>"
-		)
-	}
-	
-	// sino quiero tener todo en rojo poner el OK al final y despues codear
 	// id del Usuario
 	// Cada Laberinto debe tener nombre, id del laberinto, path de la imagen.
 	// donde hago la validacion???
@@ -40,8 +22,24 @@ class MainController {
 		ok(GatoEncerrado.getInstance.buscarUsuario(idUsuario).toJson) // verificar de retornar todos
 	}
 	
+	/* JSON con los datos del Laberinto: idUsuario y idLaberinto
+	 * Todos los elementos del inventario del Jugador???
+	 */
 	@Get('/iniciar')	
-	def iniciarLaberintos(String idUsuario, String idLaberinto){
+	def iniciarLaberinto(String idUsuario, String idLaberinto){
+		response.contentType = "application/json"
+		
+		val labs = GatoEncerrado.instance.buscarUsuario(idUsuario) // instance != ???
+		
+		ok(GatoEncerrado.getInstance.datosLaberinto(labs, idLaberinto).toJson)
+	}
+	
+	
+	/*
+	 * Resultado de ejecutar la acción, de donde encuentro idHabitacion?
+	 */
+	@Get('/realizarAccion')
+	def resultadoDeAccion(String idHabitacion, String idAccion){
 		
 		ok
 	}
