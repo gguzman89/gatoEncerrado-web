@@ -18,4 +18,13 @@ class Laberinto {
 		habitaciones = null
 	}
 	
+	def traerHabitacion(String idHab) {
+		
+		val habitacion = habitaciones.findFirst[it.idHabitacion.toString.contains(idHab)]
+		habitacion
+	}
+	
+	def realizarAccion(Habitacion hab, String idAccion){
+		// acciones posibles
+	}
 }

@@ -9,6 +9,8 @@ class GatoEncerrado {
 	List<Usuario> usuarios
 	List<Laberinto> laberintos
 	Laberinto lab1
+	Boolean inicialHab
+	Boolean finalHab
 	
 	new(){
 		
@@ -29,16 +31,21 @@ class GatoEncerrado {
 	
 	def buscarUsuario(String idUser) {
 		var user = usuarios.findFirst[it.idUsuario.toString.contains(idUser)]
-		user.resueltos
-		
+		user.resueltos // faltan No resueltos
+		// deberia solo devolver el usuario
 	}
 	
 	def listarLaberintos(Usuario usuario) {
-		usuario.getTodos()
+		usuario.getTodos() // resultos y no
 	}
 	
 	def datosLaberinto(List<Laberinto> laberintos, String idLaberinto) {
 		// findFirst
+		var lab = laberintos.findFirst[it.idLaberinto.toString.contains(idLaberinto)]
+		lab
+		// Todos los elementos del inventario del Jugador.
+		// settear el new inventario
+		
 	}
 	
 }

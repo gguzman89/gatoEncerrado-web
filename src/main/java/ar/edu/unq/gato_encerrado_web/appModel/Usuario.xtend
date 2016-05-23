@@ -10,17 +10,18 @@ class Usuario {
 	String nombreUsuario
 	List<Laberinto> resueltos
 	List<Laberinto> noResueltos
+	List<Item> inventario
 	
 	new(int id, String name) {
 		idUsuario = id
 		nombreUsuario = name
 		resueltos = null
-		noResueltos = null 
+		noResueltos = null
 	}
 	
-	def getTodos() {
-		val todos = resueltos.addAll(noResueltos)
-		todos
+	def void getTodos() {
+		resueltos.addAll(noResueltos) // revisar q sumen todos
+		
 	}
 	
 }

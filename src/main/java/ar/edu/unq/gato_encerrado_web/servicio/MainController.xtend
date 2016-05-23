@@ -11,14 +11,11 @@ class MainController {
 	
 	extension JSONUtils = new JSONUtils
 	
-	// id del Usuario
-	// Cada Laberinto debe tener nombre, id del laberinto, path de la imagen.
 	// donde hago la validacion???
 	@Get('/laberintos/:idUsuario')
 	def todosLosLaberintos(){
 		
-		response.contentType = "application/json" // ???
-		//val iID = Integer.valueOf(idUsuario)
+		response.contentType = "application/json"
 		ok(GatoEncerrado.getInstance.buscarUsuario(idUsuario).toJson) // verificar de retornar todos
 	}
 	
@@ -29,7 +26,7 @@ class MainController {
 	def iniciarLaberinto(String idUsuario, String idLaberinto){
 		response.contentType = "application/json"
 		
-		val labs = GatoEncerrado.instance.buscarUsuario(idUsuario) // instance != ???
+		val labs = GatoEncerrado.instance.buscarUsuario(idUsuario)
 		
 		ok(GatoEncerrado.getInstance.datosLaberinto(labs, idLaberinto).toJson)
 	}
@@ -41,7 +38,10 @@ class MainController {
 	@Get('/realizarAccion')
 	def resultadoDeAccion(String idHabitacion, String idAccion){
 		
-		ok
+		response.contentType = "application/json"
+		
+		
+		ok()
 	}
 	
 	def static void main(String[] args) {
