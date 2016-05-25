@@ -11,6 +11,7 @@ class GatoEncerrado {
 	Laberinto lab1
 	Boolean inicialHab
 	Boolean finalHab
+	// laberinto seleccionado
 	
 	new(){
 		
