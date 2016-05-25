@@ -2,24 +2,29 @@ package ar.edu.unq.gato_encerrado_web.appModel
 
 import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
+import ar.edu.unq.gato_encerrado_dominio.Laberinto
 
 @Accessors
 class GatoEncerrado {
 	
 	List<Usuario> usuarios
 	List<Laberinto> laberintos
-	Laberinto lab1
-	Boolean inicialHab
-	Boolean finalHab
+	//LaberintoMin lab1
+	//Boolean inicialHab
+	//Boolean finalHab
+	Laberinto labDominio
+	Usuario user1 = new Usuario(001, "gaston")
 	
 	new(){
 		
 		laberintos = # [
-			lab1 = new Laberinto("jardin Embrujado", 01, "pathImage")
+			labDominio = new Laberinto("Casa Embrujada")
 		]
+		
 		usuarios = # [
-			new Usuario(001, "gaston") // cargarle los laberintos
+			user1 // cargar los laberintos???
 		]
+		user1.resueltos = laberintos
 	}
 	
 	static val INSTANCE = new GatoEncerrado
@@ -31,12 +36,12 @@ class GatoEncerrado {
 	
 	def buscarUsuario(String idUser) {
 		var user = usuarios.findFirst[it.idUsuario.toString.contains(idUser)]
-		user.resueltos // faltan No resueltos
-		// deberia solo devolver el usuario
+		user // parse int para transformar y buscar
 	}
 	
-	def listarLaberintos(Usuario usuario) {
-		usuario.getTodos() // resultos y no
+	def listarLaberintos(String idUsuario) {
+		val user = buscarUsuario(idUsuario)
+		user.resueltos
 	}
 	
 	def datosLaberinto(List<Laberinto> laberintos, String idLaberinto) {

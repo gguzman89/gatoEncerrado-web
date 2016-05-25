@@ -2,19 +2,24 @@ package ar.edu.unq.gato_encerrado_web.appModel
 
 import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.List
+import ar.edu.unq.gato_encerrado_dominio.HabitacionMinificada
+import ar.edu.unq.gato_encerrado_dominio.Laberinto
 
 @Accessors
-class Laberinto {
+class LaberintoMin {
+	// laberinto minificado
 	
 	String nombre
 	int idLaberinto
 	String pathImage
-	List<Habitacion> habitaciones
+	List<HabitacionMinificada> habitaciones
+	Boolean resuelto
 	
-	new(String name, int id, String image) {
-		nombre = name
-		idLaberinto = id
-		pathImage = image
+	new(Laberinto lab) {
+		nombre = lab.nombreLaberinto
+		idLaberinto = lab.idLaberinto
+		pathImage = lab.path
+		resuelto = lab.resuelto
 		habitaciones = null
 	}
 	
