@@ -5,6 +5,7 @@ import org.uqbar.xtrest.api.XTRest
 import org.uqbar.xtrest.api.annotation.Controller
 import org.uqbar.xtrest.api.annotation.Get
 import org.uqbar.xtrest.json.JSONUtils
+import ar.edu.unq.gato_encerrado_web.appModel.LaberintoMin
 
 @Controller
 class MainController {
@@ -16,7 +17,7 @@ class MainController {
 	def todosLosLaberintos(){
 		
 		response.contentType = "application/json"
-		ok(GatoEncerrado.getInstance.buscarUsuario(idUsuario).toJson) // verificar de retornar todos
+		ok(GatoEncerrado.getInstance.listarLaberintos(idUsuario).map[new LaberintoMin(it)].toJson) // verificar de retornar todos
 	}
 	
 	/* JSON con los datos del Laberinto: idUsuario y idLaberinto
@@ -28,7 +29,7 @@ class MainController {
 		
 		val labs = GatoEncerrado.instance.buscarUsuario(idUsuario)
 		
-		ok(GatoEncerrado.getInstance.datosLaberinto(labs, idLaberinto).toJson)
+		ok//(GatoEncerrado.getInstance.datosLaberinto(labs, idLaberinto).toJson)
 	}
 	
 	

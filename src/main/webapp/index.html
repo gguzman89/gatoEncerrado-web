@@ -1,0 +1,109 @@
+<!doctype html>
+<html ng-app="laberintosApp">
+<head> 
+	<meta charset="UTF-8">
+	<title> Gato encerrado </title>
+
+   <!-- JQUERY -->
+ <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+ 
+ <!-- BOOTSTRAP -->
+ <link rel="stylesheet" media="screen" href="css/bootstrap.min.css">
+ <link rel="stylesheet" media="screen" href="css/bootstrap-theme.min.css">
+ <script src="js/bootstrap.min.js"></script>
+
+ <!-- BOOTBOX-->
+
+ 
+ <!-- ANGULAR  -->
+ <script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular.min.js"></script>
+ <script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular-animate.js"></script>
+	
+	<!-- $resources // ngRoute // ngAnimate -->
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="node_modules/angular-animate/angular-animate.js"></script>
+	<script src="node_modules/angular-route/angular-route.min.js"></script>
+	<script src="node_modules/angular-resource/angular-resource.min.js"></script>
+	
+<!-- loading bar -->
+<script src="node_modules/angular-loading-bar/build/loading-bar.min.js"></script>
+<link rel="stylesheet"
+	href="node_modules/angular-loading-bar/build/loading-bar.min.css" />
+
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+
+<body>
+
+<div class="jumbotron full-height">
+	<div class="container">
+ 	
+ 		<div id="fila1" class="row">
+ 		
+			<div class="col-md-2">
+				<img src="gatoencerrado.jpg" alt="Gato encerrado" class="imagen_gato">
+			</div>
+			
+			<div class="col-md-7">
+			 <h2 class="titulo"> Aca hay gato encerrado </h2> 
+			</div>
+			
+			<div class="col-md-1">
+				<button type="button" class="btn-sm">
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+					Usuario
+				</button>
+			</div>
+			
+			<div class="col-md-2">
+				<h5 class="nombre_usuario"> {{admin.nombreJugador}}</h5>
+			</div>
+		</div>
+		<br>
+		<br>
+
+		<div id="fila2" class="row">
+			
+			<div class="col-md-3" id="lista-de-laberintos"> 
+				<div class="list-group">
+  					<a href="#" class="list-group-item active"> Laberintos   						
+						<a> {{laberinto.nombreLaberinto}} </a>
+					</a>
+				</div>
+			</div>			
+			
+			<div class="col-md-9"> 
+				<div class="panel panel-default">
+  					<div class="panel-body">
+						<p> Info de laberinto seleccionado </p>
+ 					 </div>
+				</div>			
+			</div>
+			
+		</div>
+		<br>
+		<br>
+		
+		<div class="fila3">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+  					<div class="panel-body">
+						<p class="desarrolladores"> Construccion de interfaces de usuarios 
+						<br>
+						Grupo 8. Alumnos: Calderon Ingrid, Guzman Gabriel 
+						<p>Input something in the input box:</p>
+						<p>Name: <input type="text" ng-model="name"></p>
+						<p ng-bind="name"></p>
+						<p> {{2+2}} </p>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+var app = angular.module('laberintosApp', ['ngAnimate', 'ngResource', 'chieffancypants.loadingBar']);
