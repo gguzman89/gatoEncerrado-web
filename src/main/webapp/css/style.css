@@ -1,0 +1,29 @@
+.jumbotron {
+	vertical-align: middle;
+	margin: 60px;
+	line-height: 1.5;
+}
+
+.titulo {
+	font-size: 28px;
+	text-align: left;
+	float: center;
+}
+
+html, body, .full-height {
+	height: 100%;
+}
+
+.imagen_gato{
+	 width:100px;
+	 height:100px;"
+}
+
+.nombre_usuario{
+	text-align: left;
+}
+
+.fila3{
+	font-size: 10px;
+	text-align: center;
+}

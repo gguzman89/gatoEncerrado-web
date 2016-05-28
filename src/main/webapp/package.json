@@ -2,7 +2,6 @@
 "name": "gato_encerrado_web",
 "description": "GatoEncerrado AngularJS + XTrest",
 "dependencies": {
-	"angular-animate": ">= 1.3.0",
 	"angular-loading-bar": ">= 0.3.0",
 	"angular-route": ">=1.3.5",
 	"angular-resource": ">=1.3.15"

@@ -22,8 +22,8 @@
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular-animate.js"></script>
 	
 	<!-- $resources // ngRoute // ngAnimate -->
-	<script src="node_modules/angular/angular.min.js"></script>
-	<script src="node_modules/angular-animate/angular-animate.js"></script>
+	<!-- <script src="node_modules/angular/angular.min.js"></script> -->
+	<!-- <script src="node_modules/angular-animate/angular-animate.js"></script> -->
 	<script src="node_modules/angular-route/angular-route.min.js"></script>
 	<script src="node_modules/angular-resource/angular-resource.min.js"></script>
 	
@@ -35,7 +35,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 
-<body>
+<body data-ng-controller="TodosLosLaberintosCtrl as LaberintoCtrl">
 
 <div class="jumbotron full-height">
 	<div class="container">
@@ -43,7 +43,7 @@
  		<div id="fila1" class="row">
  		
 			<div class="col-md-2">
-				<img src="gatoencerrado.jpg" alt="Gato encerrado" class="imagen_gato">
+				<img src="images/gatoencerrado.jpg" alt="Gato encerrado" class="imagen_gato">
 			</div>
 			
 			<div class="col-md-7">
@@ -58,13 +58,13 @@
 			</div>
 			
 			<div class="col-md-2">
-				<h5 class="nombre_usuario"> {{admin.nombreJugador}}</h5>
+				<h5 class="nombre_usuario"> {{LaberintoCtrl.user.name}}</h5>
 			</div>
 		</div>
 		<br>
 		<br>
 
-		<div id="fila2" class="row">
+		<!--  <div id="fila2" class="row">
 			
 			<div class="col-md-3" id="lista-de-laberintos"> 
 				<div class="list-group">
@@ -82,7 +82,19 @@
 				</div>			
 			</div>
 			
+		</div> -->
+		
+		<div class="table-responsive">
+			<table class="table table-striped table-hover table-condensed example-animate-container">
+				<tbody>
+					<tr>
+						<th>Laberintos</th>
+					</tr>				
+				
+				</tbody>
+			</table>
 		</div>
+		
 		<br>
 		<br>
 		

@@ -1,4 +1,4 @@
-app.controller('TodosLosLaberintos', function($resource, cfpLoadingBar, Laberintos) {
+app.controller('TodosLosLaberintosCtrl', function($resource, cfpLoadingBar, Laberintos) {
 	'use strict';
 	
 	var self = this;
