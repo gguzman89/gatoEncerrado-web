@@ -3,12 +3,14 @@ package ar.edu.unq.gato_encerrado_web.appModel
 import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 import ar.edu.unq.gato_encerrado_dominio.Laberinto
+import ar.edu.unq.gato_encerrado_dominio.appModel.GatoEncerradoAppModel
 
 @Accessors
 class GatoEncerrado {
 	
 	List<Usuario> usuarios
-	List<Laberinto> laberintos
+	//List<Laberinto> laberintos
+	GatoEncerradoAppModel laberintos
 //	//LaberintoMin lab1
 //	//Boolean inicialHab
 //	//Boolean finalHab
@@ -17,14 +19,14 @@ class GatoEncerrado {
 	
 	new(){
 		
-		laberintos = # [
-			labDominio = new Laberinto("Casa Embrujada")
-		]
+//		laberintos = # [
+//			labDominio = new Laberinto("Casa Embrujada")
+//		]
 		
 		usuarios = # [
 			user1 // cargar los laberintos???
 		]
-		user1.resueltos = laberintos
+		//user1.resueltos = laberintos
 	}
 	
 	static val INSTANCE = new GatoEncerrado
@@ -35,7 +37,10 @@ class GatoEncerrado {
 	}
 	
 	def buscarUsuario(String idUser) {
-		var user = usuarios.findFirst[it.idUsuario.toString.contains(idUser)]
+		
+		val iId = Integer.valueOf(idUser)
+		
+		var user = usuarios.findFirst[it.idUsuario == iId]
 		user // parse int para transformar y buscar
 	}
 	

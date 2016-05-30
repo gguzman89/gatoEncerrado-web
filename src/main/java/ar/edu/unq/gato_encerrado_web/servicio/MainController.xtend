@@ -6,18 +6,32 @@ import org.uqbar.xtrest.api.annotation.Controller
 import org.uqbar.xtrest.api.annotation.Get
 import org.uqbar.xtrest.json.JSONUtils
 import ar.edu.unq.gato_encerrado_web.appModel.LaberintoMin
+import ar.edu.unq.gato_encerrado_dominio.appModel.GatoEncerradoAppModel
+import ar.edu.unq.gato_encerrado_dominio.Jugadores
+import java.util.NoSuchElementException
 
 @Controller
 class MainController {
 	
 	extension JSONUtils = new JSONUtils
 	
-	// donde hago la validacion???
 	@Get('/laberintos/:idUsuario')
 	def todosLosLaberintos(){
 		
-		response.contentType = "application/json"
-		ok(GatoEncerrado.getInstance.listarLaberintos(idUsuario).map[new LaberintoMin(it)].toJson) // verificar de retornar todos
+//		val laberintos = GatoEncerradoAppModel.instance.laberintos.clone
+//		response.contentType = "application/json"
+//		//ok(GatoEncerrado.getInstance.listarLaberintos(idUsuario).map[new LaberintoMin(it)].toJson) // verificar de retornar todos
+//		ok(laberintos.toJson)
+		val iID = Integer.valueOf(idUsuario)
+		try{
+			response.contentType = "application/json"
+			val usuario = Jugadores.instance.encontrarUsuario(iID)
+			GatoEncerradoAppModel.instance.juego.registrarUsuario(usuario)
+			//ok(usuario.juego.laberintos.map[new LaberintoMin(it)].toJson)
+			ok(GatoEncerradoAppModel.instance.laberintos.clone.toJson)
+		} catch (NoSuchElementException nse) {
+			notFound('''No se encontró el usuario con nombre de usuario = «iID»''')
+		}
 	}
 	
 	/* JSON con los datos del Laberinto: idUsuario y idLaberinto
