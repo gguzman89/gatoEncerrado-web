@@ -1,1 +1,1 @@
-var app = angular.module('laberintosApp', ['ngAnimate', 'ngResource', 'chieffancypants.loadingBar']);
+var app = angular.module('laberintosApp', []);

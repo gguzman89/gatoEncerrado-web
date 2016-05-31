@@ -1,14 +1,13 @@
 package ar.edu.unq.gato_encerrado_web.servicio
 
+import ar.edu.unq.gato_encerrado_dominio.Jugadores
+import ar.edu.unq.gato_encerrado_dominio.appModel.GatoEncerradoAppModel
 import ar.edu.unq.gato_encerrado_web.appModel.GatoEncerrado
+import java.util.NoSuchElementException
 import org.uqbar.xtrest.api.XTRest
 import org.uqbar.xtrest.api.annotation.Controller
 import org.uqbar.xtrest.api.annotation.Get
 import org.uqbar.xtrest.json.JSONUtils
-import ar.edu.unq.gato_encerrado_web.appModel.LaberintoMin
-import ar.edu.unq.gato_encerrado_dominio.appModel.GatoEncerradoAppModel
-import ar.edu.unq.gato_encerrado_dominio.Jugadores
-import java.util.NoSuchElementException
 
 @Controller
 class MainController {

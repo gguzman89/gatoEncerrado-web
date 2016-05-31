@@ -1,11 +1,8 @@
-app.controller('TodosLosLaberintosCtrl', function($resource, cfpLoadingBar, Laberintos) {
-	'use strict';
-	
+app.controller('TodosLosLaberintosCtrl', function() {
 	var self = this;
 	
-	self.laberintos = [];
+	self.laberintos = [{nombre:"Un Laberinto"}, {nombre:"asd"}];
 	self.user = {	name: "pepe"	};
-	
 	self.nombres = [];
 	
 	function obtenerNombres(laberintos) {
@@ -15,14 +12,6 @@ app.controller('TodosLosLaberintosCtrl', function($resource, cfpLoadingBar, Labe
 			}
 		});
 	}
-	
-	this.actualizarLista = function() {
-		Libros.query(function(data) {
-			self.libros = data;
-		});
-	};
-	
-	this.actualizarLista();
 	
 	// ver Detalle: para verlo si hay un boton = Biblioteca
 	this.laberintoSeleccionado = null;
